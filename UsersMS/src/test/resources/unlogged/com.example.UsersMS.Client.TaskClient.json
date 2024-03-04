@@ -1,0 +1,28 @@
+{
+  "classname" : "com.example.UsersMS.Client.TaskClient",
+  "storedCandidateMap" : { },
+  "declaredMockMap" : {
+    "com.example.UsersMS.Client.TaskClient#findByUserId#(Ljava/lang/Long;)Ljava/util/List;" : [ {
+      "id" : "a0c18dee-b14f-468d-96fd-6631ff126e9b",
+      "name" : "mock response taskClient.findByUserId",
+      "fieldTypeName" : "com.example.UsersMS.Client.TaskClient",
+      "sourceClassName" : "com.example.UsersMS.Service.UserServiceImp",
+      "fieldName" : "taskClient",
+      "methodName" : "findByUserId",
+      "whenParameter" : [ {
+        "name" : "userId",
+        "type" : "ANY_OF_TYPE",
+        "value" : "java.lang.Long"
+      } ],
+      "thenParameter" : [ {
+        "returnParameter" : {
+          "declaredMocks" : [ ],
+          "value" : "[{\"id\": \"0\", \"title\": \"string\", \"description\": \"string\", \"userId\": \"0\", \"status\": \"string\", \"dueDate\": 1709424950925}]",
+          "returnValueType" : "REAL",
+          "className" : "java.util.List<com.example.UsersMS.Utils.Task>"
+        },
+        "methodExitType" : "NORMAL"
+      } ]
+    } ]
+  }
+}

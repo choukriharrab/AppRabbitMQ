@@ -1,0 +1,28 @@
+{
+  "classname" : "com.example.UsersMS.Repository.UserRepo",
+  "storedCandidateMap" : { },
+  "declaredMockMap" : {
+    "com.example.UsersMS.Repository.UserRepo#findById#(Ljava/lang/Object;)Ljava/util/Optional;" : [ {
+      "id" : "6c51d7cf-20af-4dbb-9522-8e88b1766db2",
+      "name" : "response userRepo.findById",
+      "fieldTypeName" : "com.example.UsersMS.Repository.UserRepo",
+      "sourceClassName" : "com.example.UsersMS.Service.UserServiceImp",
+      "fieldName" : "userRepo",
+      "methodName" : "findById",
+      "whenParameter" : [ {
+        "name" : "id",
+        "type" : "ANY_OF_TYPE",
+        "value" : "java.lang.Long"
+      } ],
+      "thenParameter" : [ {
+        "returnParameter" : {
+          "declaredMocks" : [ ],
+          "value" : "{}",
+          "returnValueType" : "REAL",
+          "className" : "java.util.Optional<java.lang.Object>"
+        },
+        "methodExitType" : "NORMAL"
+      } ]
+    } ]
+  }
+}

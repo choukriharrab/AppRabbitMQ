@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.insidious.plugin.factory.InsidiousConfigurationState">
+    <option name="classFieldMockActiveStatus">
+      <map>
+        <entry key="hasShownFeatures" value="true" />
+      </map>
+    </option>
+    <option name="mockActiveStatus">
+      <map>
+        <entry key="6c51d7cf-20af-4dbb-9522-8e88b1766db2" value="true" />
+        <entry key="a0c18dee-b14f-468d-96fd-6631ff126e9b" value="true" />
+      </map>
+    </option>
+  </component>
+</project>
