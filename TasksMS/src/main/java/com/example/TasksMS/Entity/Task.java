@@ -7,14 +7,13 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "tasks")
-
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

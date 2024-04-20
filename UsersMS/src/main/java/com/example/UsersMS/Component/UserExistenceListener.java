@@ -23,5 +23,4 @@ public class UserExistenceListener {
         String response = String.valueOf(userRepo.existsById(userId));
         return response;
     }
-
 }

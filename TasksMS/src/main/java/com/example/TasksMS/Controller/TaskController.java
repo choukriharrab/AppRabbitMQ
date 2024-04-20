@@ -48,9 +48,9 @@ public class TaskController {
     }
     //Update
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateTask(@PathVariable Long id, @RequestBody TaskRequestDto userDto) {
+    public ResponseEntity<?> updateTask(@PathVariable Long id, @RequestBody TaskRequestDto taskDto) {
         try {
-            return new ResponseEntity<>(taskService.updateTask(id,userDto), HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(taskService.updateTask(id,taskDto), HttpStatus.ACCEPTED);
         } catch (NotFoundException e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.CONFLICT);
         }

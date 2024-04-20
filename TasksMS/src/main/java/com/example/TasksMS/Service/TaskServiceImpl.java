@@ -12,7 +12,6 @@ import com.example.TasksMS.MyExceptions.NotFoundException;
 import com.example.TasksMS.Repository.TaskRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ import static com.example.TasksMS.Utils.DPCombinator.TaskRegistrationValidator.*
 @AllArgsConstructor
 public class TaskServiceImpl implements TaskService{
 
-    List<TaskResponseDto> tasks = new ArrayList<>();
+    List<TaskResponseDto> tasks;
 
     @Autowired
     private final TaskRepo taskRepo;
@@ -78,6 +77,7 @@ public class TaskServiceImpl implements TaskService{
         var task = taskRepo.findById(id).orElseThrow(()->new NotFoundException("Task with id: "+id+" does NOT exist!"));
         if (taskDto.getTitle()!=null)task.setTitle(taskDto.getTitle());
         if (taskDto.getDescription()!=null)task.setDescription(taskDto.getDescription());
+        if (!userExistenceClient.checkUserExistence(taskDto.getUserId())) throw new NotFoundException("User with id: "+taskDto.getUserId()+" NOT found!");
         if (taskDto.getUserId()!=null)taskDto.setUserId(taskDto.getUserId());
         if (taskDto.getStatus()!=null)task.setStatus(taskDto.getStatus());
         if (isValidDueDate(taskDto.getDueDate().toString()).apply(taskDto)) throw new DataNotValidException("Invalid date format - Use yyyy-MM-dd instead!");

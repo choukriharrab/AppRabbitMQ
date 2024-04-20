@@ -19,9 +19,6 @@ public class RabbitMqUserExistenceClient {
     @Value("${user.existence.queue}")
     private String userExistenceQueue;
 
-
-
-
     public Boolean checkUserExistence(Long userId) {
         Object response = rabbitTemplate.convertSendAndReceive(userExistenceQueue, userId);
         String stringValue = ""+response;

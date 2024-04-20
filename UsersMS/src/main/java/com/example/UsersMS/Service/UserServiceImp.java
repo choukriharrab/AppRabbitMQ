@@ -82,7 +82,6 @@ public class UserServiceImp implements UserService{
         System.out.println("hahowa bda");
         System.out.println("hahya l id: "+id);
         List<Task> tasks = rabbitMqGetUserTasks.getUserTasks(id, "getUserTasksRoutingKey");
-
         System.out.println("fatha");
         System.out.println(tasks);
         user.setTasks(tasks);
